@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer Project</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .container{
+            width: 800px;
+            height: 600px;
+            padding: 15px;
+            border-radius: 10px;
+            /* border: 1px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .button{
+            width: 140px;
+            padding: 10px 0px;
+            border: 0.5px solid black;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="button" id="grey">grey</span>    
+        <span class="button" id="lime">lime</span>    
+        <span class="button" id="peru">peru</span>    
+        <span class="button" id="lightcoral">lightcoral</span>    
+    </div>    
+</body>
+<script>
+    let buttons = document.querySelectorAll(".button");
+    let container = document.querySelector(".container");
+    let body = document.querySelector("body");
+
+    buttons.forEach( (button)=> {
+        button.addEventListener("click", (event)=> {
+            if (event.target.id === button.id) {
+                container.style.backgroundColor = button.id
+            }
+        });
+    } );
+
+</script>
+</html>
