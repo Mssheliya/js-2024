@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        background-color: #212121;
+        color: white;
+        font-family: sans-serif;
+    }
+    .container{
+        height: 100vh;
+        width: 80%;
+        border: 1px solid red;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    ul{
+        list-style: none;
+    }
+    ul li {
+        display: inline;
+    }
+    ul li img{
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+    }
+    ul li a{
+        color: aliceblue;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <div class="container">
+        <ul id="images">
+            <li><img src="../Images/tiger.jpg" alt="" id="tiger"></li>
+            <li><img src="../Images/cheetah.jpg" id="cheetah" alt=""></li>
+            <li><img src="../Images/goat.png" id="goat" alt=""></li>
+            <li><img src="../Images/zebra.png" id="zebra" alt=""></li>
+            <li><img src="../Images/cat.jpg" id="cat" alt=""></li>
+            <li><a href="http://daleseden.com" id="eden">Eden</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //*First way to add eventlistener Direct in html tag using (onclick="") but this will not a best approch;
+    //*second way to add eventlistner which is given bellow, it will also not a best approch;
+    // document.getElementById("goat").onclick = function (){
+    //     alert("you Clicked Goat");
+    // }
+
+    //*Third way to add eventlistner which is given bellow, it will most best Approch is will give us more functionality; 
+    // addEventListener() will take 3 Perameter 1)Events in "",2)Call back function,3)Proporgation (it will default false);
+    // document.getElementById("goat").addEventListener("click", function (){
+    //     alert("Goat clicked again")
+    // }, false)
+
+    //?What is Event Proporgation :-
+    //*false = event bubbling up:- element(event) are tracked inside to outside for better under Stand run given below code;
+    //*true = event capturing :- element(event) are tracked ountside to inside for better under Stand run given below code;
+    //*e.stoPropergation() :- it will Stop bubbling up And capturing;
+
+    //*Event bubbling 
+    // document.getElementById("images").addEventListener("click", (e)=> {
+    //     console.log("Clicked under ul");
+    // },false);
+    // document.getElementById("goat").addEventListener("click", (e)=> {
+    //     console.log("Clicked goat");
+    //     e.stopPropagation();
+    // },false);
+
+    //*Event Capturing 
+    // document.getElementById("images").addEventListener("click", (e)=> {
+    //     console.log("Clicked under ul");
+    //     e.stopPropagation()
+    // },true);
+    // document.getElementById("goat").addEventListener("click", (e)=> {
+    //     console.log("Clicked goat");
+    // },true);
+
+    //e.preventDefualt() :-eg:- it will Stop to open Daleseden.com 
+    // document.getElementById("eden").addEventListener("click", (e)=> {
+    //     e.preventDefault();
+    //     console.log("Clicked eden");
+    // },false);
+
+    document.getElementById("images").addEventListener("click", (e)=> {
+        const removeIt = e.target.parentNode;
+        if (e.target.tagName === "IMG") {
+            removeIt.remove();
+            // removeIt.parentNode.removeChild(removeIt);
+            // target.parentNode.childNodes = target.remove();
+        }
+    })
+
+</script>
+</html>
