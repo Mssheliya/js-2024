@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" class="height" placeholder="Enter height in CM">
+            <input type="text" class="weight" placeholder="Enter weight in KG">
+            <button type="submit">Calculate</button>
+        </form>
+        <div class="result">
+
+        </div>
+    </div>
+</body>
+<script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let height = parseInt(document.querySelector(".height").value);
+        let weight = parseInt(document.querySelector(".weight").value);
+        let result = document.querySelector(".result");
+        const CalculateBMI = (weight / ((height * height) / 10000)).toFixed(2);
+        if (height === "" || height <= 0 || isNaN(height)) {
+            result.innerHTML = `<h3>Please Enter Correct Height in CM</h3>`;
+        }
+        else if (weight === "" || weight <= 0 || isNaN(weight)) {
+            result.innerHTML = `<h3>Please Enter Correct weight in Kg</h3>`;
+        }
+        else {
+            if (CalculateBMI <= 18.4) {
+                // result.innerHTML = `<h3>${CalculateBMI}</h3>`;
+                result.innerHTML = `
+                <span style="font-size:20px margin-top:20px; font-weight:bold;">Your BMI = ${CalculateBMI}</span>
+                <span style="color:red;">(UnderWeight)</span>`;
+            } else if (CalculateBMI >= 18.5 && CalculateBMI <= 24.9) {
+                result.innerHTML = `
+                <span style="font-size:20px margin-top:20px; font-weight:bold;">Your BMI = ${CalculateBMI}</span>
+                <span style="color:green;">(Normal)</span>`;
+            } else {
+                result.innerHTML = `
+                <span style="font-size:20px margin-top:20px; font-weight:bold;">Your BMI = ${CalculateBMI}</span>
+                <span style="color:orange;">(OverWeight)</span>`;
+            }
+        }
+    })
+</script>
+
+</html>
