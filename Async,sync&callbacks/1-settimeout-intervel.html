@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settimeout & setinterval practice</title>
+</head>
+<body>
+    <div class="container">
+        <h3 class="heading">Wellcome to JS <span>(settimout() & cleartimeout())</span></h3>
+        <button id="stop">Stop</button><br><br><br>
+        <h3 class="heading">Wellcome to JS <span>(setinterval() & clearinterval())</span></h3>
+        <button id="stop1">Stop</button><br><br><br>
+        <h3 class="heading">Wellcome to JS <span>(Assignment Using setInterval() & clearInterval())</span></h3>
+        <button id="start">Start</button>
+        <button id="stop2">Stop</button>
+    </div>
+</body>
+<script>
+    //*Create settimeout function which is print JavaScript after 2 sec;
+    //first type
+    setTimeout( function(){
+        // console.log("JavaScript");
+    }, 2000)
+    //Second type
+    function printjs(){
+        // console.log("JavaScript1");
+    }
+    const stopme = setTimeout(printjs,2000);
+    
+    //*clear timeout function on stop button click which is print JavaScript after 2 sec;
+    document.getElementById("stop").addEventListener("click", (e)=> {
+        clearTimeout(stopme);
+        // console.log('Stoped');
+    });
+    
+// <--------------------------------------------------------------**********------------------------------------------------------------>
+    
+    //*Create setinterval function which is print JavaScript and current Time contineusly after evry 1 sec;
+    //second type
+    const continuePrint = function(){
+        // console.log(`JavaScript ${Date.now()}`);
+    };
+    const stopme1 = setInterval(continuePrint,1000);
+    //*clear interval function on stop button click. which is print JavaScript and date  continuesly after every 1 sec;
+    document.getElementById("stop1").addEventListener("click", (e)=> {
+        clearInterval(stopme1);
+        // console.log("Stopped");
+    })
+
+// <------------------------------------------------------------***********-------------------------------------------------------------->
+
+    //complete Assignment Start And Stop printing 
+    let clear = ""
+    function start(){
+        if (!clear) {
+            clear = setInterval(run, 1000);
+        }
+        function run(){
+            console.log(`JavaScript ${Date.now()}`);
+        }
+    };
+    function stop(){
+        clearInterval(clear)
+        console.log("stop");
+        clear = null;
+    };
+
+    document.querySelector("#start").addEventListener("click",start);
+    document.querySelector("#stop2").addEventListener("click",stop);
+</script>
+</html>

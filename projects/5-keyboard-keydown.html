@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Down key Project</title>
+</head>
+<style>
+    body {
+        color: white;
+        background-color: #212121;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+<script>
+    let table = document.querySelector(".container");
+    window.addEventListener("keydown", function (e) {
+        table.innerHTML = `
+                <table>
+                    <tr>
+                        <th>Key</th>
+                        <th>Code</th>
+                    </tr>
+                    <tr>
+                        <td>${e.key}</td>
+                        <td>${e.code}</td>
+                    </tr
+                </table>
+        `;
+    })
+
+</script>
+
+</html>

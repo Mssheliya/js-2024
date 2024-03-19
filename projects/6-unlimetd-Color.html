@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change unlimited background color</title>
+</head>
+
+<body>
+    <div class="container">
+        <h4 class="heading">Click Start Buttor To change countinuesly background Color & click Stop for Stop Chnaging
+        </h4>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+<script>
+    function randomColor() {
+        const hax = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += hax[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    }
+
+    let clear = ""
+    function startChanging() {
+        if (!clear) {
+            clear = setInterval(set, 1000);
+        }
+        function set() {
+            document.body.style.backgroundColor = randomColor();
+        }
+    };
+    function stopChanging() {
+        clearInterval(clear);
+        clear = null;
+    }
+    document.getElementById("start").addEventListener("click", startChanging);
+    document.getElementById("stop").addEventListener("click", stopChanging);
+</script>
+
+</html>
