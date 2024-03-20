@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajex Practice</title>
+    <style>
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table th {
+            width: 140px;
+            text-align: center;
+            border: 0.5px solid black;
+            padding: 5px;
+        }
+
+        table td {
+            width: 140px;
+            text-align: center;
+            border: 0.5px solid black;
+            padding: 5px;
+        }
+
+        #getdata {
+            margin: 20px;
+            padding: 10px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table id="userdata">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>UserName</th>
+                <th>Website</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <button id="getdata">Click Here</button>
+    </div>
+</body>
+<script>
+    const tbody = document.querySelector("#userdata tbody");
+
+    document.getElementById("getdata").addEventListener("click", (e) => {
+        const reqUrl = "https://jsonplaceholder.typicode.com/users";
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", reqUrl);
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.response);
+                // console.log(data)
+                let tr = ""
+                data.forEach(d => {
+                    tr += `
+                    <tr>
+                        <td>${d.id}</td>
+                        <td>${d.name}</td>
+                        <td>${d.username}</td>
+                        <td>${d.website}</td>
+                    </tr>
+                `;
+                });
+                tbody.innerHTML = tr;
+            }
+        }
+        xhr.send();
+    })
+
+</script>
+
+</html>
