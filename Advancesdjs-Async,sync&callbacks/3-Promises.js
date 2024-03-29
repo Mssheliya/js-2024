@@ -77,7 +77,8 @@ new Promise((resolve, reject) => { //Creating promiseFour
 // }
 // getData();
 
-fetch('https://jsonplaceholder.typicode.com/users')
+// fetch('https://jsonplaceholder.typicode.com/users')
+fetch('./student_data.JSON')
 .then((res)=> {
     return res.json()
 })
@@ -85,5 +86,5 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log(result);
 })
 .catch((error)=> {
-    console.log("error");
+    console.log(error);
 })

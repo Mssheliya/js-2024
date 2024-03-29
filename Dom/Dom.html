@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Menupulation</title>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li>home</li>
+            <li>About</li>
+            <li>Conatct</li>
+            <li>Gallary</li>
+            <li>Socail Medias</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="p1">Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea aspernatur repellendus.</p>
+    </div>
+</body>
+    <script>
+        //*Select Div tag using there id   
+        let container = document.getElementById("container");
+        // console.log(container);
+
+        //*Select Div tag using querySelector   
+        let container1 = document.querySelector("#container");
+        // console.log(container1);
+
+        // select p tag using classname? it will return 
+        let p1 = document.getElementsByClassName("p1");
+        // console.log(p1);
+        
+        //*select p tag using tagname? it will return 
+        let p = document.getElementsByTagName("p");
+        // console.log(p);
+        p[0].style.fontWeight = "bold"
+
+        //*select All li using queryselectorAll? it will Return A nodeList 
+        let li = document.querySelectorAll("li");
+        // console.log(li);
+
+        //*We use Some of Array Funtion On nodeList for eg:- foreach 
+        li.forEach( (li)=> {
+            // console.log(li.innerText);
+        } );
+        
+        //*select first li using queryselector
+        //*select first li using queryselector
+        const li1 = document.querySelector("li:first-child");
+        // console.log(li1); 
+        
+        //*select third li using queryselector
+        let li3 = document.querySelector("li:nth-child(3)");
+        // console.log(li3); 
+        
+        //*select Fourth li using queryselector
+        let li4 = document.querySelector("li:nth-child(4)");
+        li4.style.color = "green";
+        // console.log(li4); 
+        
+        //*select Last li using queryselector
+        const li5 = document.querySelector("li:last-child");
+        li5.style.color = "Red"
+        // console.log(li5); 
+
+        // Append H1 tag in container div
+        const h1 = document.createElement("h1");
+        const text = document.createTextNode("Hello World")
+        h1.appendChild(text);
+        h1.setAttribute("class","h1");
+        h1.id = "h1"
+        // console.log(h1);
+        container.appendChild(h1);
+    </script>
+</html>
