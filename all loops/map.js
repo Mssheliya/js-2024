@@ -22,7 +22,7 @@ let plusNum = arrnum.map((num)=> num+10);
 // arrnum.reverse()
 // console.log(arrnum);
 
-//* reverse given bellow strings words alphabate without changing words indexing
+//* reverse given bellow strings alphabate without changing words indexing
 const str = "my name is Mustafa";
 const newstr = str.split(" ").map((word)=> word.split("").reverse().join().replaceAll(",","")).join().replaceAll(","," ");
 // console.log(newstr);

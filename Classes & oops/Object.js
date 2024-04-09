@@ -1,6 +1,5 @@
 
 function multipleBy5(num){
-
     return num*5
 }
 
@@ -10,6 +9,7 @@ multipleBy5.power = 2
 // console.log(multipleBy5.power);
 // console.log(multipleBy5.prototype);
 
+//-----------------------------------------------------------------------****-------------------------------------------------------------
 function createUser(username, score){
     this.username = username
     this.score = score
@@ -28,13 +28,13 @@ createUser.prototype.printMe = function(){
 const chai = new createUser("chai", 25)
 const tea = new createUser("tea", 250)
 
-tea.printMe()
-tea.increment(30);
+// tea.printMe()
+// tea.increment(30);
 
 
 /*
 
-Here's what happens behind the scenes when the new keyword is used:
+Here's what happens behind the scenes when the (new) keyword is used:
 
 A new object is created: The new keyword initiates the creation of a new JavaScript object.
 
@@ -45,3 +45,28 @@ The constructor is called: The constructor function is called with the specified
 The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
 
 */
+
+//------------------------------------------------------------**********-----------------------------------------------------------------
+// Lil Advanced Topic of JavaScript
+//? Can you change the value of Math.PI if yes then how? Or If no then why? 
+// Ans:- No becouase the value MAth.PI is Constant becoz some of there properties are blocked. run console log which is given below;
+
+//console.log(Math.PI); //Value of Math.PI
+//Math.PI = 5; //trying to OverWrite Math.PI Value
+//console.log(Math.PI); //Value of Math.PI it will be not OverWrited
+// console.log(Object.getOwnPropertyDescriptor(Math, "PI"));
+
+let Chai = {
+    name: "kashmiri Rose Tea",
+    price: 980,
+    isAvailable: true,
+};
+// console.log(Chai);
+//blocking the value of isAvalaible so it will not allow to change there value and not ittreble too
+Object.getOwnPropertyDescriptor(Chai, "isAvailable");
+Object.defineProperty(Chai, "isAvailable", {
+    writable: false,
+    enumerable: false,
+});
+Chai.isAvailable = false;
+// console.log(Chai.isAvailable);

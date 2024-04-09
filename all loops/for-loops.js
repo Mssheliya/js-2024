@@ -23,4 +23,4 @@ for (let i = 0; i < strtoArr.length; i++) {
         }
    finalRes.push(firstRes);
 }
-// console.log(finalRes.join().replaceAll(",", " "));
+console.log(finalRes.join().replaceAll(",", " "));

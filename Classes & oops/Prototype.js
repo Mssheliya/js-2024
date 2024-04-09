@@ -7,6 +7,7 @@ String.prototype.truelength = function(){
 // console.log(myString.length);
 // console.log(myString.truelength());
 
+//----------------------------------------------------------------********----------------------------------------------------------------
 //*inject method in array prototype which is return reverse Array 
 let arr = ["iron","thor",25,"spider","hey"];
 Array.prototype.Myreverse = function(){
@@ -18,6 +19,7 @@ Array.prototype.Myreverse = function(){
 };
 // arr.Myreverse();
 
+//----------------------------------------------------------------********-----------------------------------------------------------------
 //*inject method directly in Object prototype so everyone can used 
 Object.prototype.printMe = function(){
     console.log("Hey From Object");
@@ -25,6 +27,7 @@ Object.prototype.printMe = function(){
 //arr.printMe(); //Work properly
 //myString.printMe(); //Work properly
 
+//-------------------------------------------------------------*********------------------------------------------------------------------
 //*inheritence
 const User = {
     name: "chai",
