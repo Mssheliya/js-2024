@@ -95,3 +95,38 @@ let str13 = "my name is Ali, i am Indian";
 //console.log(str13.slice(3, 14)); //name is Ali
 //console.log(str13.slice(-6)); //Indian
 //console.log(str13.slice(-12, -7)); //i am
+
+//*14-split()
+//The split() method of String values takes a pattern and divides this string into an ordered list of substrings by searching for the pattern,
+//puts these substrings into an array, and returns the array.
+let str14 = "Hey Doe how old are you"
+//console.log(str14.split(" ")); //[ 'Hey', 'Doe', 'how', 'old', 'are', 'you' ]
+//console.log(str14.split("")); //{'H', 'e', 'y', ' ', 'D','o', 'e', ' ', 'h', 'o','w', ' ', 'o', 'l', 'd',' ', 'a', 'r', 'e', ' ','y', 'o', 'u']
+//console.log(str14.split()); //[ 'Hey', 'Doe', 'how', 'old', 'are', 'you' ]
+
+//*15-replace()
+//The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
+//The original string is left unchanged.
+let str15 = "my name is mustafa"
+//console.log(str15.replace("mustafa","Ali")); //my name is Ali
+//console.log(str15.replace(" ","*")); //my*name
+
+//*16-replaceAll()
+//The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.
+//The original string is left unchanged.
+let str16 = "my name is mustafa, and my brother name is AD"
+//console.log(str16.replaceAll("my", "your")); //your name is mustafa, and your brother name is AD
+//console.log(str16.replaceAll(" ", "*")); //my*name*is*mustafa,*and*my*brother*name*is*AD
+
+//*17-repeat()
+//The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+let str17 = "name"
+//console.log(str17.repeat(3)); //namenamename
+//console.log("*".repeat(3)); //***
+
+//*18-trim()
+//The trim() method of String values removes whitespace from both ends of this string and returns a new string, without modifying the original string.
+//To return a new string with whitespace trimmed from just one end, use trimStart() or trimEnd().
+const str18 = '   Hello world!   ';
+//console.log(str18); //   Hello world!   *
+//console.log(str18.trim()); //Hello world!

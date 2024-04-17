@@ -17,6 +17,8 @@ const mustafa = new User("Mustafa", "ms@gmail.com", "123456");
 // console.log(mustafa);
 // mustafa.printMe();
 
+//------------------------------------------------------------------********--------------------------------------------------------------
+
 //* Behind the Scene Of this User Class How its Work in javaScript.
 function User1(username,email,password){
     this.username = username;
