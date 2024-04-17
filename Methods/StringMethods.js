@@ -23,9 +23,9 @@ let str2 = "Mustafa"
 let str3 = "Hello World Hello from India";
 //console.log(str3.indexOf("Hello")); // 0, because 'Hello' is found at the beginning
 //console.log(str3.indexOf("hello")); // -1, not found, the search is case-sensitive
-//console.log(str3.indexOf("lo")); // 2, "lo" is found at the position 2 (Hello with lo)
+//console.log(str3.indexOf("Hello", 2)); // 12, 2nd "Hello" is found at the position 12 
 
-//*5-includes, startsWith, endsWith
+//*5-includes,
 //The more modern method str.includes(substr, pos) returns true/false depending on whether str contains substr within.
 let str4 = "my name is mustafa";
 //console.log(str4.includes("mustafa")); //true
@@ -51,3 +51,47 @@ let str8 = "hey i am a developer"
 //console.log(str8.startsWith("he")); //true
 //console.log(str8.startsWith("deve")); //false
 //console.log(str8.startsWith("deve", 11)); //true
+
+//*9-endsWith()
+//The endsWith() method of String values determines whether a string ends with the characters of this string, returning true or false as appropriate.
+let str9 = "Iam a Indian, stay in Maharashtra"
+//console.log(str9.endsWith("Maharashtra")); //true
+//console.log(str9.endsWith("maharashtra")); //false (it is Case--Sensitive)
+//console.log(str9.endsWith("Indian")); //false
+//console.log(str9.endsWith("Indian", 12)); //true
+
+//*10-lastIndexOf()
+//The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring. 
+//It takes an optional starting position and returns the last occurrence of the specified substring at an index less than or equal 
+//to the specified number.
+let str10 = "Hello World Hello from India";
+//console.log(str10.lastIndexOf("Hello")); //12
+//console.log(str10.lastIndexOf("hello")); //-1 (Eror:- Case-Sensetive)
+
+//*11-padStart()
+//The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string 
+//reaches the given length. The padding is applied from the start of this string.
+let str11 = "7506303563";
+//console.log(str11.padStart(str11.length+4,"*")); //****7506303563
+//console.log(str11.padStart(14,"*")); //****7506303563
+//let slicestr = str11.slice(-4);
+//console.log(slicestr); //3563
+//console.log(slicestr.padStart(str11.length, "*")); //******3563
+
+//*12-padEnd()
+//The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string 
+//reaches a given length. The padding is applied from the end of this string.
+let str12 = "7506303563";
+//console.log(str12.padEnd(str12.length+4, "*")); //7506303563****
+//console.log(str12.padEnd(14, "*")); //7506303563****
+//let slicestr = str12.slice(0, 4);
+//console.log(slicestr); //7506
+//console.log(slicestr.padEnd(str12.length, "*")); //7506******
+
+//*13-slice()
+//The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+let str13 = "my name is Ali, i am Indian";
+//console.log(str13.slice(21)); //Indian
+//console.log(str13.slice(3, 14)); //name is Ali
+//console.log(str13.slice(-6)); //Indian
+//console.log(str13.slice(-12, -7)); //i am
